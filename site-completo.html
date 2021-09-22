@@ -21,6 +21,7 @@
   <body>
       <!--NAV BAR-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img class="tm-social" src="assets/img/super-heroi.png" alt="Logo">
         <a class="navbar-brand font-weight-bold" href="#">Alex Ross - DC</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
@@ -150,11 +151,14 @@
     <form>
       <div class="form-group">
         <label for="exampleFormControlInput1">Seu email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+        <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com"
+        onkeyup="validaEmail()">
+        <div id="txtEmail"></div>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">Deseja falar sobre qual obra?</label>
         <select class="form-control" id="exampleFormControlSelect1">
+          <option placeholder>--Escolha uma das opções--</option>
           <option>Reino do Amanhã</option>
           <option>Justiça</option>
           <option>Os Maiores Super-Heróis da Terra</option>
@@ -162,17 +166,20 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Insira sua sugestão:</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="sugestao">Envie sua sugestão:</label><br>
+        <textarea class="form-control" id="sugestao" rows="3" cols="6" placeholder="Insira o texto aqui..."
+        onkeyup="validaSugestao()"></textarea>
+        <div id='txtSugestao'></div>
       </div>
+      <button onclick="enviar()">Enviar</button>
     </form>
   </div>
 
   <div class="col-md-6 container">
     <p>Rua Octacilio Celestino Gallo</p>
     <p>São Bernardo do Campo - SP</p>
-    <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.4109317567063!2d-46.59697698578972!3d-23.661258171172328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce44a70df6dd65%3A0x60c492030d657c34!2Rua%20Octac%C3%ADlio%20Celestino%20Gallo%20-%20Jardim%20Borborema%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009660-080!5e0!3m2!1spt-BR!2sbr!4v1631816755846!5m2!1spt-BR!2sbr" 
-        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+    <iframe class="w-100" id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.4109317567063!2d-46.59697698578972!3d-23.661258171172328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce44a70df6dd65%3A0x60c492030d657c34!2Rua%20Octac%C3%ADlio%20Celestino%20Gallo%20-%20Jardim%20Borborema%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009660-080!5e0!3m2!1spt-BR!2sbr!4v1631816755846!5m2!1spt-BR!2sbr" 
+      width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" onmousemove="zoomMapa()" onmouseout="mapaNormal()"
     ></iframe>
   </div>
 </div>
@@ -214,5 +221,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
